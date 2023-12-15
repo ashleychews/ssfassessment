@@ -7,6 +7,7 @@
 </head>
     <body>
         <h1>List of Events</h1>
+        <br><hr>
 
             <table class="table table-striped">
                 <thead>
@@ -19,18 +20,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr data-th-each="event: ${event}">
-                        <td data-th-text="*{event.eventId}"></td>
-                        <td data-th-text="*{event.eventName}"></td>
-                        <td data-th-text="*{event.eventSize}"></td>
-                        <td data-th-text="*{event.eventDate}"></td>
+                    <tr data-th-each="eve: ${event}">
+                        <td data-th-text="${eve.eventId}"></td>
+                        <td data-th-text="${eve.eventName}"></td>
+                        <td data-th-text="${eve.eventSize}"></td>
+                        <td data-th-text="${eve.eventDate}"></td>
                         
                         <td>
                             <!--hyperlink is a get-->
-                            <a></a>
-                            <a></a>
-
-
+                            <a th:href="@{/events/listing/register/{eventId}(eventId=${event.eventId})}" class="btn btn-primary">Register</a>
                         </td>
             
                     </tr>

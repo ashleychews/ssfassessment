@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -53,13 +52,8 @@ public class RedisRepository {
 
 	//returns event object at the particular index from event list
 	// TODO: Task 4
-	public void getEvent(Integer index) {
-		if (index >= 0 && index < events.size()) {
-			Event desired = events.get(index);
-			System.out.println("Event at index " + index + ": " + desired);
-		} else {
-			System.out.println("invalid index");
-		}
+	public Event getEvent(Integer index) {
+		return events.stream().filter(e->e.equals(index)).findFirst().get();
 
 	}
 
