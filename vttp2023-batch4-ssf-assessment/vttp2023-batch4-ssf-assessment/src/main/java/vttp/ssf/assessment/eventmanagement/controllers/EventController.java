@@ -25,7 +25,7 @@ public class EventController {
 
 	@GetMapping("listing/register/{eventId}")
 	public String register(Model model) {
-		model.addAttribute("register", new Register())
+		model.addAttribute("register", new Register());
 		return "view1";
 	}
 
