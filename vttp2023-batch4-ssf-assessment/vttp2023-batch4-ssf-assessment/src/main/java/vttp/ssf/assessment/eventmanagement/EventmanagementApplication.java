@@ -26,15 +26,11 @@ public class EventmanagementApplication implements CommandLineRunner{
 
 	public void run(String... args) throws Exception {
 		String pathFilename = "C:\\Users\\Ashley Chew\\VTTP Course\\VTTP\\SSFassessment\\ssfassessment\\vttp2023-batch4-ssf-assessment\\vttp2023-batch4-ssf-assessment\\events.json";
-        try {
-            List<Event> events = dbSvc.readFile(pathFilename);
-            // Do something with the events, e.g., print them
-            events.forEach(System.out::println);
-        } catch (Exception e) {
-            // Handle exceptions appropriately
-            e.printStackTrace();
-        }
+        List<Event> events = dbSvc.readFile(pathFilename);
+
+		System.out.println("events" + events);
+		//events[vttp.ssf.assessment.eventmanagement.models.Event@3028a72b, vttp.ssf.assessment.eventmanagement.models.Event@7458632e, 
+		//vttp.ssf.assessment.eventmanagement.models.Event@48f6ee95, vttp.ssf.assessment.eventmanagement.models.Event@47d2e09b]
 	}
 
 }
-//jakarta.json.stream.JsonParsingException: Unexpected char 67 at (line no=1, column no=1, offset=0)

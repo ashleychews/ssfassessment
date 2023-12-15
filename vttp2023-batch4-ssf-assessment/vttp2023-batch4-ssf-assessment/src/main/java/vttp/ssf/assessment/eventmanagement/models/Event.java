@@ -1,6 +1,5 @@
 package vttp.ssf.assessment.eventmanagement.models;
 
-
 public class Event {
     
     private int eventId;
@@ -51,6 +50,18 @@ public class Event {
 
     public void setParticipants(int participants) {
         this.participants = participants;
+    }
+
+    public Event(int eventId, String eventName, int eventSize, long eventDate, int participants) {
+        this.eventId = eventId;
+        this.eventName = eventName;
+        this.eventSize = eventSize;
+        this.eventDate = eventDate;
+        this.participants = participants;
+    }
+
+    public Event() {
+
     }
 
 }
