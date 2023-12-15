@@ -3,7 +3,6 @@ package vttp.ssf.assessment.eventmanagement.models;
 import java.time.LocalDate;
 import java.time.Period;
 
-import org.springframework.cglib.core.Local;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.validation.constraints.Email;

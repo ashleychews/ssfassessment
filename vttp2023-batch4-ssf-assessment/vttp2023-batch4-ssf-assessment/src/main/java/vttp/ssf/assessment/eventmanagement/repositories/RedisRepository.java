@@ -35,13 +35,13 @@ public class RedisRepository {
 		return body;
 	}
 
-	//save event into redis
-	public void saveRecord(Event event) {
-		String body = serializeEvent(event);
-		template.opsForValue()
-			.set(event.getEventId());
+	// //save event into redis
+	// public void saveRecord(Event event) {
+	// 	String body = serializeEvent(event);
+	// 	template.opsForValue()
+	// 		.set(event.getEventId());
 
-	}
+	// }
 
 	//returns size of the event list
 	// TODO: Task 3

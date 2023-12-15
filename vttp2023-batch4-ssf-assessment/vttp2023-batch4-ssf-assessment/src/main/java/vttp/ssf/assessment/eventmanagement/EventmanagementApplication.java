@@ -22,13 +22,19 @@ public class EventmanagementApplication implements CommandLineRunner{
 	
 	// TODO: Task 1
 	@Override
-
 	//checking whether can readfile
 
 	public void run(String... args) throws Exception {
 		String pathFilename = "C:\\Users\\Ashley Chew\\VTTP Course\\VTTP\\SSFassessment\\ssfassessment\\vttp2023-batch4-ssf-assessment\\vttp2023-batch4-ssf-assessment\\events.json";
-		List<Event> events = dbSvc.readFile(pathFilename);
-		System.out.println("events:" + events);
+        try {
+            List<Event> events = dbSvc.readFile(pathFilename);
+            // Do something with the events, e.g., print them
+            events.forEach(System.out::println);
+        } catch (Exception e) {
+            // Handle exceptions appropriately
+            e.printStackTrace();
+        }
 	}
 
 }
+//jakarta.json.stream.JsonParsingException: Unexpected char 67 at (line no=1, column no=1, offset=0)
