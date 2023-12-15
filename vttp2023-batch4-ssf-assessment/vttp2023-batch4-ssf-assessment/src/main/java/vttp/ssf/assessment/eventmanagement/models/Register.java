@@ -94,12 +94,5 @@ public class Register {
         this.tickets = tickets;
     }
 
-    public void calculateAge() {
-        int calculatedAge = 0;
-        if ((dob != null)) {
-            calculatedAge = Period.between(dob, LocalDate.now()).getYears();
-        }
-        setAge(calculatedAge);
-    }
 
 }

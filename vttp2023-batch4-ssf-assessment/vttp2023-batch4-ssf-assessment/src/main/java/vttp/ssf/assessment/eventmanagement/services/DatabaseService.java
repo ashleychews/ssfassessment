@@ -16,10 +16,10 @@ import vttp.ssf.assessment.eventmanagement.models.Event;
 @Service
 public class DatabaseService {
     
+    public List<Event> events;
     // TODO: Task 1
 
     public List<Event> readFile(String fileName) throws Exception {
-        List<Event> events;
         File file = new File(fileName);
         InputStream is = new FileInputStream(file);
         JsonReader jsonReader = Json.createReader(is);
@@ -35,6 +35,10 @@ public class DatabaseService {
                 return new Event(eventId, eventName, eventSize, eventDate, participants);
             })
             .toList();
+        return events;
+    }
+
+    public List<Event> retrieveList() {
         return events;
     }
 

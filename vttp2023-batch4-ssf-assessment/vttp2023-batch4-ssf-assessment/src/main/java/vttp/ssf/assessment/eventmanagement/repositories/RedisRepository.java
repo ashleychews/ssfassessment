@@ -1,7 +1,5 @@
 package vttp.ssf.assessment.eventmanagement.repositories;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -15,26 +13,7 @@ public class RedisRepository {
 	@Autowired @Qualifier("myredis")
 	private RedisTemplate<String, Event> template;
 
-	private List<Event> events;
-
 	// TODO: Task 2
-	// public String serializeEvent(Event event) {
-	// 	String eventId = Integer.toString(event.getEventId());
-	// 	String eventName = event.getEventName();
-	// 	String eventSize = Integer.toString(event.getEventSize());
-	// 	String eventDate = Long.toString(event.getEventDate());
-	// 	String participants = Integer.toString(event.getParticipants());
-	// 	//build the string event for redis input
-	// 	StringBuilder sb =new StringBuilder()
-	// 						.append("eventId" + eventId+",")
-	// 						.append("eventName"+eventName+",")
-	// 						.append("eventSize"+eventSize+",")
-	// 						.append("eventDate"+eventDate+",")
-	// 						.append("participants"+participants+",");
-
-	// 	String body = sb.toString();
-	// 	return body;
-	// }
 
 	//save event into redis
 	public void saveRecord(Event event) {
@@ -46,14 +25,14 @@ public class RedisRepository {
 	//returns size of the event list
 	// TODO: Task 3
 	public long getNumberOfEvents() {
-		long size = template.opsForValue().size(null);
+		long size = template.opsForValue().size("events");
 		return size;
 	}
 
 	//returns event object at the particular index from event list
 	// TODO: Task 4
 	public Event getEvent(Integer index) {
-		return events.stream().filter(e->e.equals(index)).findFirst().get();
+		return (Event) template.opsForList().index("events", index);
 
 	}
 
