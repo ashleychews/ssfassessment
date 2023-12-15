@@ -1,6 +1,5 @@
 package vttp.ssf.assessment.eventmanagement;
 
-import java.io.File;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +26,9 @@ public class EventmanagementApplication implements CommandLineRunner{
 	//checking whether can readfile
 
 	public void run(String... args) throws Exception {
-		// String pathFilename = "C:\\Users\\Ashley Chew\\VTTP Course\\VTTP\\SSFassessment\\ssfassessment\\vttp2023-batch4-ssf-assessment\\vttp2023-batch4-ssf-assessment\\events.json"
-		// File file = new File(pathFilename);
-		// List<Event> events = dbSvc.readFile();
-		// System.out.println("events:" + events);
+		String pathFilename = "C:\\Users\\Ashley Chew\\VTTP Course\\VTTP\\SSFassessment\\ssfassessment\\vttp2023-batch4-ssf-assessment\\vttp2023-batch4-ssf-assessment\\events.json";
+		List<Event> events = dbSvc.readFile(pathFilename);
+		System.out.println("events:" + events);
 	}
 
 }

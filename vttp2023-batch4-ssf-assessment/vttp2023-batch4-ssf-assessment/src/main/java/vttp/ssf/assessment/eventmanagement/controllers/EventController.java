@@ -18,6 +18,9 @@ public class EventController {
 		return "view0";
 	}
 
-
+	@GetMapping("/register/{eventId}")
+	public String register() {
+		return "view1";
+	}
 
 }

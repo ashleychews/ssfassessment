@@ -16,8 +16,6 @@ public class RedisRepository {
 
 	private ListOperations<String, Event> list;
 
-	private String listref = "event";
-
 	// TODO: Task 2
 	public String serializeEvent(Event event) {
 		String eventId = Integer.toString(event.getEventId());
@@ -40,14 +38,15 @@ public class RedisRepository {
 	//save event into redis
 	public void saveRecord(Event event) {
 		String body = serializeEvent(event);
-		template.opsForList();
+		template.opsForValue()
+			.set(event.getEventId());
 
 	}
 
 	//returns size of the event list
 	// TODO: Task 3
 	public long getNumberOfEvents() {
-		long size = template.opsForList().size(null);
+		long size = template.opsForValue().size(null);
 		return size;
 	}
 
