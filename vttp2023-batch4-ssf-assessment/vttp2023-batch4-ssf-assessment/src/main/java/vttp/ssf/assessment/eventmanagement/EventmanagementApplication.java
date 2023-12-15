@@ -29,8 +29,11 @@ public class EventmanagementApplication implements CommandLineRunner{
         List<Event> events = dbSvc.readFile(pathFilename);
 
 		System.out.println("events" + events);
-		//events[vttp.ssf.assessment.eventmanagement.models.Event@3028a72b, vttp.ssf.assessment.eventmanagement.models.Event@7458632e, 
-		//vttp.ssf.assessment.eventmanagement.models.Event@48f6ee95, vttp.ssf.assessment.eventmanagement.models.Event@47d2e09b]
+		//printed outcome:
+		//events[Event{eventId=1, eventName='"Christmas Eve Party"', eventSize=20, eventDate=1703415600000, participants=0}, 
+		//Event{eventId=2, eventName='"Round Singapore Cycling"', eventSize=5, eventDate=1702857600000, participants=0}, 
+		//Event{eventId=3, eventName='"Intro to SCRATCH"', eventSize=5, eventDate=1704502800000, participants=0}, 
+		//Event{eventId=4, eventName='"JB Shopping !"', eventSize=5, eventDate=1699837200000, participants=0}]
 	}
 
 }

@@ -19,17 +19,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr data-th-each="eve: ${events}">
-                        <td data-th-text="*{eve.eventId}"></td>
-                        <td data-th-text="*{eve.eventName}"></td>
-                        <td data-th-text="*{eve.eventSize}"></td>
-                        <td data-th-text="*{eve.eventDate}"></td>
+                    <tr data-th-each="event: ${event}">
+                        <td data-th-text="*{event.eventId}"></td>
+                        <td data-th-text="*{event.eventName}"></td>
+                        <td data-th-text="*{event.eventSize}"></td>
+                        <td data-th-text="*{event.eventDate}"></td>
                         
                         <td>
                             <!--hyperlink is a get-->
                             <a></a>
                             <a></a>
-                                
+
 
                         </td>
             

@@ -1,5 +1,7 @@
 package vttp.ssf.assessment.eventmanagement.repositories;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.ListOperations;
@@ -14,7 +16,7 @@ public class RedisRepository {
 	@Autowired @Qualifier("myredis")
 	private RedisTemplate<String, Event> template;
 
-	private ListOperations<String, Event> list;
+	private List<Event> events;
 
 	// TODO: Task 2
 	// public String serializeEvent(Event event) {
@@ -52,6 +54,13 @@ public class RedisRepository {
 	//returns event object at the particular index from event list
 	// TODO: Task 4
 	public void getEvent(Integer index) {
+		if (index >= 0 && index < events.size()) {
+			Event desired = events.get(index);
+			System.out.println("Event at index " + index + ": " + desired);
+		} else {
+			System.out.println("invalid index");
+		}
+
 	}
 
 }
