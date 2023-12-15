@@ -8,7 +8,7 @@
     <body>
         <h1>Success</h1>
         <p>You have successfully register for the event</p>
-        <p></p>
+        <p><span th:text="${event.eventName}"></span></p>
         <a th:href="@{/events/listing}">Back to Event Listing</a>
         
     </body>

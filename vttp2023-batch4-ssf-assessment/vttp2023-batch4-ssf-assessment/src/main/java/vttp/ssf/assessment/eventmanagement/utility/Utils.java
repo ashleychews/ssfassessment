@@ -17,7 +17,8 @@ public class Utils {
 
     //check if sum of tickets exceed
     // public static String checkParticipants() {
-
+    //     int sum=0;
+    //     //get the participants and decrease everytime someone register
 
 
     // }

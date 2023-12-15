@@ -31,17 +31,16 @@ public class RegistrationController {
 
     // TODO: Task 7
     @PostMapping("/registration/register")
-    public String processRegistration(@Valid @ModelAttribute("register") Register register, BindingResult result, Model model) {
+    public String processRegistration(@Valid @ModelAttribute("register") Register register, BindingResult result, Model model, HttpSession sess) {
 
-        //have error return error page
+        //if have validation error, stay on page
         if (result.hasErrors()) {
-            return "ErrorRegistration"; 
+            return "eventregister"; 
         }
 
         //validate age range
-
         if (null != Utils.checkAge(register.getDob())) {
-            result.addError(new FieldError("contact", "birthDay", "Must be above 21 to participate"));
+            result.addError(new FieldError("register", "dob", "Must be above 21 to participate"));
             return "ErrorRegistration"; 
         }
 

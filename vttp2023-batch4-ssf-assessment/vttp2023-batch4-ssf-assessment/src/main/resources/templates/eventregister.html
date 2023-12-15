@@ -14,8 +14,8 @@
             <br><tr>
 
             <h4>You have choose to register for the following event</h4>
-            <p><span th:field="${event.eventName}"></span></p>
-            <p><span th:field="${event.eventDate}"></span></p>
+            <p><span th:text="${event.eventName}"></span></p>
+            <p><span th:text="${#dates.format(event.eventDate, 'dd-MMM-yyyy')}"></span></p>
 
             <div class="container">
 
